@@ -1,0 +1,19 @@
+{
+  "name": "basecamp",
+  "version": "1.0.0",
+  "description": "This is backend for basecamp like project management app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DIPAKK2310/Backend_lab.git"
+  },
+  "author": "Dipak Khare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DIPAKK2310/Backend_lab/issues"
+  },
+  "homepage": "https://github.com/DIPAKK2310/Backend_lab#readme"
+}
