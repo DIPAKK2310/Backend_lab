@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "This is backend for basecamp like project management app",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
