@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/DIPAKK2310/Backend_lab/issues"
   },
-  "homepage": "https://github.com/DIPAKK2310/Backend_lab#readme"
+  "homepage": "https://github.com/DIPAKK2310/Backend_lab#readme",
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
 }
