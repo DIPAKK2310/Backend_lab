@@ -1,96 +1,146 @@
-# 🌐 Introduction to Backend Development
+# Backend Development Tools
 
-## 🔹 What is Backend?
-
-Backend is the part of an application that runs on the **server-side**.  
-It handles:
-
-- Business logic
-- Database operations
-- Authentication & authorization
-- API responses
-- Server communication
-
-👉 In short: **Frontend is what the user sees, Backend is what happens behind the scenes.**
-
----
-
-## 🔹 Why is Backend Important?
-
-- Stores and manages **data** (e.g., user accounts, orders, products).
-- Ensures **security** (login, JWT, encryption).
-- Provides **APIs** for frontend apps (web, mobile).
-- Handles **scalability** (thousands/millions of users).
-
----
-
-## 🔹 Backend vs Frontend
-
-| Aspect       | Frontend (Client)           | Backend (Server)              |
-| ------------ | --------------------------- | ----------------------------- |
-| Runs on      | Browser / Client device     | Server (Cloud/Localhost)      |
-| Language     | HTML, CSS, JS, React etc.   | Node.js, Express, Python, etc |
-| Data Storage | Browser cache, LocalStorage | Database (MongoDB, MySQL)     |
-| Focus        | UI/UX, user interaction     | Business logic, data handling |
-
----
-
-## 🔹 Backend Tech Stack
-
-- **Language**: JavaScript (Node.js)
-- **Framework**: Express.js
-- **Database**: MongoDB
-- **Authentication**: JWT, bcrypt
-- **Others**: Postman (API testing), Git, Docker (optional)
-
----
-
-## 🔹 Backend Workflow (High-Level)
-
-1. User sends a request from the browser/app.
-2. Request reaches the server (backend).
-3. Server processes the request (logic + DB operations).
-4. Server sends back a response (data or error).
-5. Frontend displays it to the user.
-
-Example:
-
-- User logs in → Backend checks credentials → Generates JWT → Sends token → Frontend stores token.
-
----
-
-## 🔹 Simple Example
-
-```js
-// A basic Node.js server without Express
-const http = require("http");
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello Backend!");
-});
-
-server.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
-```
-
-🔹 Real-world Use Cases
-
-E-commerce checkout system
-
-Login/Signup APIs
-
-Chat applications
-
-Streaming services (Netflix, YouTube)
-
-Banking transactions
-
+## 1. Nodemon
+- Auto restart server on file changes.
+- Install: 
 ```bash
-✅ Takeaway:
+ npm install --save-dev nodemon
+```
+- Use in code:
+```bash
+  import dotenv from "dotenv";
+  
+  dotenv.config();
 
-Backend is the engine that powers applications — it handles data, logic, and security so the frontend can deliver a smooth experience.
+  console.log(process.env.DB_URL);
 ```
 
----
+## 2. dotenv
+- Manage environment variables.
+- Install :
+
+
+
+  ```bash
+    npm install dotenv
+    ```
+- Example: DB_URL, JWT_SECRET
+
+## 3. Postman / Thunder Client
+- API testing without frontend.
+
+## 4. ESLint + Prettier
+- For clean, consistent code.
+- Install :
+```bash
+ npm install --save-dev --save-exact prettier
+ ```
+- Run:
+```bash
+  npx prettier . --write
+```
+- Check :
+```bash
+  npx prettier . --check
+```
+- --check is like --write, but only checks that files are already formatted, rather than overwriting them. 
+
+
+## 5. Morgan
+- Logs HTTP requests.
+- Install :
+```bash
+  npm install morgan
+
+```
+- Usage :
+```bash
+  import morgan from "morgan";
+  app.use(morgan("dev"));
+```
+
+## 6. nodemailer
+- Send emails from backend.
+- Install : 
+```bash
+  npm install nodemailer
+
+```
+- Example:
+```bash
+    import nodemailer from "nodemailer";
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "your_email@gmail.com",
+      pass: "your_password"
+    }
+  });
+
+  transporter.sendMail({
+    from: "your_email@gmail.com",
+    to: "receiver@gmail.com",
+    subject: "Test Mail",
+    text: "Hello from Node.js!"
+  });
+
+```
+
+## 7. Jest / Mocha + Chai
+- Testing frameworks.
+- Jest install:
+```bash
+  npm install --save-dev jest
+
+```
+- Add to package.json:
+```bash
+ "scripts": {
+  "test": "jest"
+  }
+```
+- Run tests:
+```bash
+  npm test
+```
+
+## 8. Git + GitHub
+- Version control.
+- Git + Github Basics :
+```bash
+  git init
+  git add .
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin  
+   https://github.com/DIPAKK2310/repo_name.git
+  git push -u origin main
+
+```
+
+## 9. Database GUIs
+- MongoDB Compass, DBeaver.
+
+## 10. Docker
+- Containerize apps (advanced).
+- Check version :
+```bash
+  docker --version
+
+```
+- Run MongoDB container:
+```bash
+  docker run -d -p 27017:27017 --name   
+  mymongo mongo
+
+
+```
+- Run Node app container(example) :
+```bash
+  docker build -t my-node-app .
+
+  docker run -d -p 3000:3000 my-node-app
+
+
+```
