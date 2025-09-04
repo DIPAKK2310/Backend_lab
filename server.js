@@ -19,8 +19,8 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/product") {
     res.writeHead(200,{"Content-Type":"application/json"});
     res.end(JSON.stringify([
-        {id:1,Product_name: "condom", price:69},
-        {id:2,Product_name:"viagra", price:6969},
+        {id:1,Product_name: "Iphone",category: "Electronic",price:69000},
+        {id:2,Product_name:"Mobile", category: "Electronic",price:3000},
     ]));
   } else if (req.url === "/info") {
     res.end("Welcome to info page why because your smart");
