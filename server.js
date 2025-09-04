@@ -1,22 +1,36 @@
 import http from "http";
+import dotenv from "dotenv"
+import { json } from "stream/consumers";
+
+dotenv.config({
+    path:"./.env" //onmain folder search for path of .env
+})
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
   if (req.url === "/") {
-    res.end("Welcome to 🏠 page");
+    res.end("welcome to 🏠 page");
   } else if (req.url === "/about") {
-    res.end("This is about📟 page");
+    res.end("Welcome to about Page");
   } else if (req.url === "/contact") {
-    res.end(`<h3>Contact to sunnyleone69@hotmail.com</h3>,Mobile no:696969`);
+    res.writeHead(200,{"Content-Type":"text/html"})
+    res.end("<h3>Contact:-696969 </h3><h1>Email:-SunnyLeone69@Hotmail.com</h1>");
   } else if (req.url === "/info") {
-    res.end("This is info page");
+  } else if (req.url === "/product") {
+    res.writeHead(200,{"Content-Type":"application/json"});
+    res.end(JSON.stringify([
+        {id:1,Product_name: "condom", price:69},
+        {id:2,Product_name:"viagra", price:6969},
+    ]));
+  } else if (req.url === "/info") {
+    res.end("Welcome to info page why because your smart");
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("Hello from http server");
+    res.end("404 Error");
   }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
   console.log(`server is listnening on http://localhost:${PORT}`);
