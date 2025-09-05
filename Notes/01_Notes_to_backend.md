@@ -9,7 +9,6 @@
  npm install --save-dev nodemon
 ```
 
-
 ## 2. dotenv
 
 - Manage environment variables.
@@ -28,6 +27,7 @@
 
   console.log(process.env.DB_URL);
 ```
+
 - Example: DB_URL, JWT_SECRET
 
 ## 3. Postman / Thunder Client

@@ -1,15 +1,16 @@
 # 🚀 Express.js Notes
 
 ## 1. Basics
+
 - **What is Express?**  
   A minimal and flexible Node.js framework that simplifies building web applications and APIs.
-- **Why use Express?**  
-  - Cleaner syntax than Node’s `http` module.  
-  - Easy routing, middleware, and request handling.  
-- **Install & Run**  
+- **Why use Express?**
+  - Cleaner syntax than Node’s `http` module.
+  - Easy routing, middleware, and request handling.
+- **Install & Run**
   ```bash
   npm install express
-
+  ```
 
 # 🛠 Express.js Practice Roadmap (Beginner → Intermediate)
 
@@ -45,11 +46,11 @@
 ## 🚀 Intermediate Level
 
 5. **CRUD API (In-Memory Data)**
-   - Routes:  
-     - `GET /api/items` → List all items  
-     - `POST /api/items` → Add new item  
-     - `PUT /api/items/:id` → Update item  
-     - `DELETE /api/items/:id` → Delete item  
+   - Routes:
+     - `GET /api/items` → List all items
+     - `POST /api/items` → Add new item
+     - `PUT /api/items/:id` → Update item
+     - `DELETE /api/items/:id` → Delete item
 
 6. **Middleware Practice**
    - Create custom middleware to log:
@@ -104,6 +105,7 @@
 ---
 
 ## 📌 Summary
-- **Beginner**: Learn routes, JSON, params, middleware basics.  
-- **Intermediate**: CRUD API, static files, modular routes, error handling.  
-- **Advanced Path**: Add authentication + database → build real projects.  
+
+- **Beginner**: Learn routes, JSON, params, middleware basics.
+- **Intermediate**: CRUD API, static files, modular routes, error handling.
+- **Advanced Path**: Add authentication + database → build real projects.
